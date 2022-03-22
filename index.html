@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        picture {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+        img {
+            border-radius: 50%;
+            box-shadow: 0 0 15px #555;
+            margin-bottom 10px;
+        }
+
+    </style>
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <h1>Primera clase de React JS </h1>
+<!--     <picture>
+        <img src=" src="https://randomuser.me/api/portraits/lego/1.jpg" alt="">
+        nombre 
+    </picture> -->
+<div id="app"> </div>
+
+<script type="text/babel">
+    const app = document.getElementById('app')
+
+    const r = React.createElement  /*   referencia a la func de abajo */
+
+    const Avatar = () => {
+        const src = "https://randomuser.me/api/portraits/lego/1${params.img}.jpg"
+
+        return r('picture', {}, [r('img', {src, alt: 'lego 1'}), 'Seba'])  
+    }
+    /*   parametros: nombre del elemento que se quiere crear, atributos del componente (en este caso no tiene) y componentes hijos */
+
+    const AvatarJSX = () => { 
+
+        const src = "https://randomuser.me/api/portraits/lego/1${params.img}.jpg"
+        return (
+            <picture>
+            <img src="{src}" alt="Lego 2" />
+            Seba
+            </picture>
+        )
+        
+    }
+
+
+    ReactDOM.render(r(Avatar), app)
+
+  /*   declaraciones de react */
+   /*   src y alt son atributos */
+
+</script>
+    
+   <!--  <script>
+        console.log('hola desde script')
+        const app = document.getElementById('root')
+        console.log(app)
+
+        const avatar = (params)=> {
+            return `
+            <picture>
+                <img src=" src="https://randomuser.me/api/portraits/lego/1${params.img}.jpg" alt="">
+                ${params.name} ${params.lastName || ''} 
+            </picture>
+            `
+        }
+
+        app.innerHTML = avatar( {id: 5, name: 'Pepino', lastName: 'perez'})
+        app.innerHTML += avatar( {id: 6, name: 'Memina'})
+    </script> -->
+</body>
+</html>
