@@ -2,7 +2,7 @@ import './NavBar.css'
 
 const NavBar = () => {
     return(
-        <nav>
+        <nav className="NavBar">
             <button>Quienes Somos</button>
         </nav>
     )
