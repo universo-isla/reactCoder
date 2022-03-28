@@ -1,0 +1,16 @@
+.CartWidget {
+padding: 12px;
+font-size: 10px;
+border-radius: 8px;
+flex: none;
+display: flex;
+order: 1;
+align-self: center;
+text-decoration: none;
+cursor: pointer;
+}
+
+.CartImg{
+    width: 30px;
+    margin-right: 20px;
+}
