@@ -1,3 +1,4 @@
+import React from 'react';
 const ItemListContainer = (props) => { /*lo que se recibe por prop es un parámetro, aunque se pasa como argumento  */
 
     return(

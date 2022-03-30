@@ -1,7 +1,9 @@
 .NavBar {
-    background-color: rgb(188, 204, 192);
+    background-color: rgb(171, 216, 157);
     font-size: 1rem;
-    color: rgb(54, 136, 91);
+    color: rgb(69, 102, 84);
     font-family: 'Noto Sans', sans-serif;
+    padding-left: 2rem;
+    padding-right: 2rem;
 
 }
