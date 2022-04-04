@@ -4,11 +4,12 @@ import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const App = () => {
+function App () {
+
     return (
         <div className="App">
             <NavBar />
-            <ItemListContainer greeting ='Bienvenidos Amantes Verdes' />
+            <ItemListContainer />
         </div>
     );
 }
