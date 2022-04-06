@@ -27,26 +27,7 @@ const ItemListContainer = (condition) => {
 
     );
 };
-/* 
-const ItemListContainer = (props) => { lo que se recibe por prop es un parámetro, aunque se pasa como argumento  
-    const [products, setProducts] = useState ([])
 
-    useEffect (() => {
-        fakeFetch().then(prods => {
-            setProducts(prods)
-        })
-    }, [])
 
-    return(
-        <div>
-            <h1>{props.greeting}</h1>
-            <ul>
-                { products.map(product => <li key= {product.id} >{product.name}</li>) }
-            </ul>
-        </div>
-
-    )
-} 
-*/
 
 export default ItemListContainer;
