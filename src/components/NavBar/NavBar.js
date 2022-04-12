@@ -2,6 +2,7 @@ import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import './NavBar.css'
 import CartWidget from '../CartWidget/CartWidget'
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
 
@@ -20,6 +21,8 @@ const NavBar = () => {
                     </Nav>
 
                 </Navbar.Collapse>
+                <NavLink to='/list' className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>Lista</NavLink>
+                <NavLink to='/detail' className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}>Detalle</NavLink>
 
 
                 <div>

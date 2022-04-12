@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 const ItemCount = ({onAdd, stock, initial, count}) => {
     return (
         <div>
