@@ -1,32 +1,47 @@
-import React, {useState} from 'react';
-//import {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react';
+import { getProducts } from '../../asyncmock';
+//import {useState, } from 'react'
 //import { getProduct } from '../../asyncmock'
 //import { fakeFetch } from '../../asyncmock';
-import ItemCount from '../ItemCount';
+//import ItemCount from '../ItemCount';
+import ItemList from '../itemList/itemList';
+import { useParams } from 'react-router-dom';
 
 
+const ItemListContainer = (props) => {
+    const [products, setProducts] = useState([]);
 
-const ItemListContainer = (condition) => {
-    const [count, setCount] = useState(1);
+    const { categoryId } = useParams()
 
-    const onAdd = (condition) => {
-        if(condition === '-'){
+    useEffect(() => {
+        getProducts(categoryId).then(prods => {
+            setProducts(prods)
+        }).catch(error => {
+            console.log(error)
+        })
+      /*   if(condition === '-'){
             setCount (count -1);
         } if (condition === '+'){
             setCount (count +1);
-        }
-    };
+        } */
+    }, [categoryId])
+
+
 
     const stock = 6;
     const initial = 1;
 
     return (
         <div>
-            <ItemCount onAdd={onAdd} stock={stock} initial={initial} count={count} />
+            <h1>{props.greetings}</h1>
+            <ItemList products={products} />
         </div>
+/*         {/* <div>
+            <ItemCount onAdd={onAdd} stock={stock} initial={initial} count={count} />
+        </div> }*/ 
 
-    );
-};
+    )
+}
 
 
 

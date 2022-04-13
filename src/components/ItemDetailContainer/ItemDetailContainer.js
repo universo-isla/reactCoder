@@ -1,6 +1,8 @@
+import React from 'react';
 import { useState, useEffect } from 'react'
 import { getProductsById } from '../../asyncmock'
 import ItemDetail from '../ItemDetail/ItemDetail'
+
 
 const ItemDetailContainer = () => {
     const [product, setProduct] = useState()
@@ -8,12 +10,12 @@ const ItemDetailContainer = () => {
 
 
     useEffect (() => {
-        getProductsById(1). then(item => {
+        getProductsById(1).then(item => {
             setProduct(item)
         }).catch(err => {
             console.log(err)
-        }).finally(() =>
-        setLoading(false))
+        }).finally(() => {
+        setLoading(false)
     })
 
         return(() => {
@@ -30,7 +32,6 @@ const ItemDetailContainer = () => {
                 <ItemDetail {...product} /> :
                 <h1>El producto no existe</h1>
             } 
-            <h1>Detalle</h1>
         </div>
     )
 }
