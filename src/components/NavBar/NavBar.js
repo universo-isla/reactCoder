@@ -25,9 +25,9 @@ const NavBar = () => {
                 <Navbar.Toggle />
                 <Navbar.Collapse>
                     <Nav>
-                        <Nav.Link href="Plantas" >Plantas</Nav.Link>
-                        <Nav.Link href="Masetas" >Masetas</Nav.Link>
-                        <Nav.Link href="Accesorios" >Accesorios</Nav.Link>
+                        <Nav.Link href="helechos" >Helechos</Nav.Link>
+                        <Nav.Link href="suculentas" >Suculentas</Nav.Link>
+                        <Nav.Link href="pequenasInt" >Pequeñas de interior</Nav.Link>
                     </Nav>
 
                 </Navbar.Collapse>
@@ -43,16 +43,6 @@ const NavBar = () => {
                     <CartWidget />
                 </div>
             </Navbar>
-  {/*           <div>
-                
-            </div>
-            <div>
-                <button>Plantas</button>
-                <button>Accesorios jardinería</button>
-                <button>Fertilizantes</button>
-            </div> */}
-            
-            
 
         </nav>
     )

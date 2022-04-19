@@ -23,7 +23,7 @@ const ItemListContenedor = (props) => {
         })/* .finally(() => {
             setLoading(false)
     }) */
-    }, [])
+    }, [categoryId])
 
 /*     useEffect(() => {
         console.log(products);
@@ -31,7 +31,6 @@ const ItemListContenedor = (props) => {
 
    return(
         <div>
-            <h1>{props.greetings}</h1> 
             <ItemList products={products} />
         </div>
 

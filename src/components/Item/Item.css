@@ -1,0 +1,21 @@
+.CardItem {
+
+      margin-bottom: 2rem;
+      
+      text-align: center;
+      border: 1px solid white;
+      border-radius: 10px;
+      color: rgb(50, 79, 65);
+      background-color: rgb(181, 207, 199);
+      
+}
+
+.ItemHeader {
+    font-size: 1.2rem;
+    padding-top: 5%;
+    color: rgb(69, 102, 84);
+    font-family: 'Noto Sans', sans-serif;
+}
+.ItemImg {
+
+}

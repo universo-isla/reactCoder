@@ -1,8 +1,9 @@
 import React from 'react';
 import './Item.css';
+import { Link } from 'react-router-dom'
 
 //import { Context } from '../../App';
-//import { Link } from 'react-router-dom'
+
 //import Context from 'react-bootstrap/esm/AccordionContext';
 
 
@@ -31,12 +32,10 @@ const Item = ({id, name, img, precio}) => {
                 </p>
             </section>
             <footer className='ItemFooter'>
-                <link to={`/detail/${id}`} className='Option'>Ver detalle</link>
+                <Link to={`/detail/${id}`} className='Option'>Ver detalle</Link>
             </footer>
         </article>
     )
 }
-
-
 
 export default Item
