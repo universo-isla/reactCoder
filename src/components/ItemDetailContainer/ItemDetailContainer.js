@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import { getProductsById } from '../../asyncmock'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import './components/ItemDetailContainer/ItemDetailContainer.css'
+import '../ItemDetailContainer/ItemDetailContainer.css'
 
 
 
@@ -34,7 +34,7 @@ const ItemDetailContainer = ({setCart, cart}) => {
                 loading ?
                 <h1>Cargando...</h1>:
                 product ?
-                <ItemDetail key={product} {...product} /* setCart={setCart} cart={cart } */ /> :
+                <ItemDetail  {...product} setCart={setCart} cart={cart } /> :
                 <h1>El producto no existe</h1>
             } 
         </div>

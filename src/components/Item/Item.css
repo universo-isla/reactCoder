@@ -1,13 +1,26 @@
+.ContainerItem {
+
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border-radius: 25px;
+}
+
 .CardItem {
 
       margin-bottom: 2rem;
-      
+      width: 300px;
       text-align: center;
-      border: 1px solid white;
       border-radius: 10px;
       color: rgb(50, 79, 65);
       background-color: rgb(181, 207, 199);
       
+}
+
+.CardItem:hover{
+    -webkit-box-shadow: 5px 13px 31px 3px rgba(0,0,0,0.32); 
+    box-shadow: 5px 13px 31px 3px rgba(0,0,0,0.32);
 }
 
 .ItemHeader {
