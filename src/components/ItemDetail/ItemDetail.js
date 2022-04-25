@@ -1,27 +1,30 @@
 import React from 'react';
-import ItemCount from '../ItemCount/index';
+//import ItemCount from '../ItemCount/index';
 import './ItemDetail.css'
-import { useState, useContext } from 'react'
+import { /* useState, */ useContext } from 'react'
 import { Link } from 'react-router-dom'
+import Counter from '../Counter/Counter';
 import CartContext from '../../context/CartContext';
 
 
-const ItemDetail = ({id, name, img, category, descripcion, precio, stock}) => {
+const ItemDetail = ({id, name, img, category, descripcion, precio, stock, setCart, cart}) => {
 
 
-    const [  setQuantity ] = useState(0) //quantity, va dentro de corchetes, prueba
+    //const [quantity, setQuantity ] = useState(0)
 
     const { addItem, isInCart } = useContext(CartContext)
 
     const handleAdd = (count) => {
-        
-        setQuantity(count)
+        //setQuantity(count)
 
-        const productObj = {
+        const objProd = {
             id, name, precio
         }
 
-        addItem ({...productObj, count}) // **Aquí hay un problema, si agrego : count algo pasa con quantity que sale "is neves used "**
+        setCart([...cart, objProd])
+        //setQuantity(count)
+
+        addItem ({...objProd, quantity: count})
 
     }
 
@@ -49,7 +52,7 @@ const ItemDetail = ({id, name, img, category, descripcion, precio, stock}) => {
             </section>
             <footer className='ItemFooter'>
                 {/*<Select options={options} onSelect={handleSelect} />*/}
-                { isInCart(id) ? <Link to='/cart'>Ir al carrito</Link> : <ItemCount initial={1} onAdd={handleAdd} stock={stock} /> }
+                { isInCart(id) ? <Link to='/cart'>Ir al carrito</Link> : <Counter initial={1} onAdd={handleAdd} stock={stock} /> } 
             </footer>
         </article>
     )

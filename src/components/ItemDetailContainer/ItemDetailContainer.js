@@ -28,12 +28,16 @@ const ItemDetailContainer = ({setCart, cart}) => {
         })
     }, [productId])
 
+    if(loading) {
+        return(
+            <h1>Cargando...</h1>
+        )
+    }
+
     return (
         <div className='ItemDetailContainer'>
          {
-                loading ?
-                <h1>Cargando...</h1>:
-                product ?
+            product ?
                 <ItemDetail  {...product} setCart={setCart} cart={cart } /> :
                 <h1>El producto no existe</h1>
             } 

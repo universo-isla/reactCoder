@@ -1,0 +1,21 @@
+/* .notificationStyles {
+    position: 'absolute';
+    top: 100;
+    right: 5;
+    width: '250px';
+    height: 'auto';
+    padding: '10px 20px 10px 20px';
+    color: 'white';
+} */
+.Success {
+    background-color: rgb(6, 216, 146);
+}
+
+.Error {
+    background-color: rgb(215, 45, 45);
+}
+
+.Message {
+    position: absolute;
+    top: 100px
+}

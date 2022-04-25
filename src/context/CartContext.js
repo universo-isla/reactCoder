@@ -10,18 +10,19 @@ export const CartContextProvider = ({ children }) => {
 
     const addItem = (productToAdd) => {
         setCart([...cart, productToAdd])
+
     }
 
     const getQuantity = () => {
         let count = 0
         cart.forEach(prod => {
-            count += prod.getQuantity
+            count += prod.quantity
         })
 
         return count
     }
 
-    const isInCart = (id) => {
+    const isInCart = (id) => { //se recibe el ID para buscar
        return cart.some( prod => prod.id === id)
     }
 
