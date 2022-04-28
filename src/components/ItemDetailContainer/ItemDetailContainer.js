@@ -7,8 +7,8 @@ import '../ItemDetailContainer/ItemDetailContainer.css'
 
 
 
-const ItemDetailContainer = ({setCart, cart}) => {
-    const [product, setProduct] = useState()
+const ItemDetailContainer = (setCart, cart) => {
+    const [product, setProduct] = useState([])
     const [loading, setLoading] = useState(true)
 
     const { productId } = useParams()
@@ -16,31 +16,35 @@ const ItemDetailContainer = ({setCart, cart}) => {
 
     useEffect (() => {
         getProductsById(productId).then(item => {
-            setProduct(item)
-        }).catch(err => {
+            setProduct(item)          
+        }).catch(err  => {
             console.log(err)
         }).finally(() => {
-        setLoading(false)
-    })
+            setLoading(false)
+        })
+    
 
-        return(() => {
+        return (() => {
             setProduct()
         })
     }, [productId])
 
-    if(loading) {
+/*     if(loading) {
         return(
             <h1>Cargando...</h1>
         )
-    }
+    } */
 
     return (
-        <div className='ItemDetailContainer'>
-         {
-            product ?
-                <ItemDetail  {...product} setCart={setCart} cart={cart } /> :
-                <h1>El producto no existe</h1>
-            } 
+        <div className="ItemDetailContainer">
+            {
+                loading ?             
+                    <h1>Cargando...</h1> :
+                product ? 
+                    <ItemDetail  {...product} setCart={setCart} cart={cart } />
+                 : 
+                    <h1>El producto no existe</h1>
+            }
         </div>
     )
 }

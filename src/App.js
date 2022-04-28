@@ -15,7 +15,8 @@ import Notification from './Notification/Notification';
 
 const App = () => {
 
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState([]); 
+    console.log(cart)
 
     
     return (

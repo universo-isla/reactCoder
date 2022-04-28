@@ -1,43 +1,63 @@
-import React from 'react';
-//import ItemCount from '../ItemCount/index';
+import React, { useContext } from 'react';
+// import { Context } from "../../App";
+// import ItemCount from '../ItemCount/index';
 import './ItemDetail.css'
-import { /* useState, */ useContext } from 'react'
+import { /* useState, */  } from 'react'
 import { Link } from 'react-router-dom'
 import Counter from '../Counter/Counter';
 import CartContext from '../../context/CartContext';
 
+ 
+/* const InputCount = ({onConfirm, stock, initial = 1}) => {
+    const [count, setCount] = useState(initial)
+
+    const handleChange = (e) => {
+        if(e.taget.value <= stock) {
+            setCount(e.target.value)
+        }
+        
+    }
+
+    return (
+        <div>
+            <input type='number' onChange={handleChange} value={count}/>
+            <button onClick={() => onConfirm(count)}>Agregar al carrito</button> 
+        </div>
+
+    )
+
+} */
 
 const ItemDetail = ({id, name, img, category, descripcion, precio, stock, setCart, cart}) => {
 
 
     //const [quantity, setQuantity ] = useState(0)
 
-    const { addItem, isInCart } = useContext(CartContext)
+    const { addItem, /* isInCart, */ getQuantityProd } = useContext(CartContext)
 
     const handleAdd = (count) => {
         //setQuantity(count)
 
         const objProd = {
-            id, name, precio
+            id, name, precio, quantity: count,
         }
 
         setCart([...cart, objProd])
         //setQuantity(count)
 
-        addItem ({...objProd, quantity: count})
+        addItem (objProd)
 
     }
 
     return(
         <article className='CardItem'>
 
-            <picture>
-                <img src={img} alt={name} className='ItemImg' />
-            </picture>
-
             <header className='Header'>
                 <h2 className='ItemHeader'> {name} </h2>
             </header>
+            <picture>
+                <img src={img} alt={name} className='ItemImg' />
+            </picture>
 
             <section>
                 <p className='Info'>
@@ -50,9 +70,11 @@ const ItemDetail = ({id, name, img, category, descripcion, precio, stock, setCar
                     Precio: ${precio}
                 </p>
             </section>
-            <footer className='ItemFooter'>
-                {/*<Select options={options} onSelect={handleSelect} />*/}
-                { isInCart(id) ? <Link to='/cart'>Ir al carrito</Link> : <Counter initial={1} onAdd={handleAdd} stock={stock} /> } 
+            <footer className='ItemFooter'> 
+                { 
+                false ?
+                <Link to='/cart'>Ir al carrito</Link> 
+                : <Counter initial={getQuantityProd(id)} onAdd={handleAdd} stock={stock} /> } 
             </footer>
         </article>
     )

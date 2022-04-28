@@ -6,11 +6,28 @@ const CartContext = createContext()
 export const CartContextProvider = ({ children }) => {
 
     const [cart, setCart] = useState([])
-    console.log(cart)
+
+/*     const addItem = (productToAdd) => {
+        if(!isInCart(productToAdd.id)) {
+            setCart([...cart, productToAdd])
+        } else {
+            const newProducts = cart.map(prod => {
+                if(prod.id === productToAdd.id) {
+                    const newProduct = {
+                        ...prod,
+                        quantity: productToAdd.quantity
+                    }
+                    return newProduct
+                } else {
+                    return prod
+                }
+            })
+            setCart(newProducts)
+        }
+    } */
 
     const addItem = (productToAdd) => {
         setCart([...cart, productToAdd])
-
     }
 
     const getQuantity = () => {
@@ -21,9 +38,9 @@ export const CartContextProvider = ({ children }) => {
 
         return count
     }
-
-    const isInCart = (id) => { //se recibe el ID para buscar
-       return cart.some( prod => prod.id === id)
+    
+    const isInCart = (id) => {
+        return cart.some(p => p.id === id )
     }
 
     const clearCart = () => {
@@ -31,9 +48,22 @@ export const CartContextProvider = ({ children }) => {
     }
 
     const removeItem = (id) => {
-       const products = cart.filter(prod => prod.id !== id) //  desde => es equivalente a true
-       setCart(products)
+        const products = cart.filter(prod => prod.id !== id )
+        setCart(products)
     }
+
+/*     const getQuantityProd = (id) => {
+        return cart.find(prod => prod.id === id)?.quantity
+    }
+
+    const getTotal = () => {
+        let total = 0
+        cart.forEach(prod => {
+            total += prod.quantity * prod.price
+        })
+        
+        return total
+    } */
 
     return(
         <CartContext.Provider value={{
@@ -42,7 +72,9 @@ export const CartContextProvider = ({ children }) => {
              getQuantity,
              isInCart,
              clearCart,
-             removeItem
+             removeItem,
+ /*             getQuantityProd,
+             getTotal */
         }}>
             { children}
         </CartContext.Provider>
