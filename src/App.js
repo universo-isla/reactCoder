@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -8,35 +8,40 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
 import Form from './components/Forms/Forms.js';
 import { CartContextProvider } from './context/CartContext';
-import Cart from './components/Cart/Cart';
-import Notification from './Notification/Notification';
+//import Cart from '' ** falta esto** 
 
-
+//export const Context = createContext()
 
 const App = () => {
+    //const [cart, setCart] = useState([])
 
+<<<<<<< HEAD
     const [cart, setCart] = useState([]); 
     console.log(cart)
 
+=======
+    //console.log(cart)
+>>>>>>> parent of 9ece763... mejoras en contador, ya va a los detalles, aunque se desconectan las imgs, ya suma a la cant del carrito
     
     return (
         <div className="App">
-            
+            {/*<Context.Provider value={{ cart, setCart}}>*/}
             <CartContextProvider>
-                <Notification />
                 <BrowserRouter>
                     <NavBar />
-                    {/* <Link to='/form' className='Option'> Form </Link> */ } 
+                     {/* <Link to='/form' className='Option'> Form </Link> */ } 
                     <Routes>
+                        
                         <Route path='/' element={<ItemListContenedor greeting={<p>Catálogo de plantas</p>} />} />
                         <Route path='/category/:categoryId' element={<ItemListContenedor />} />
-                        <Route path='/detail/:productId' element={<ItemDetailContainer setCart={setCart} cart={cart} />} /> 
+                        <Route path='/detail/:productId' element={<ItemDetailContainer /* **esto falta** setCart={setCart} cart={cart} */ />}  /> 
                         {/* <Route path='*' element={<h1>'No encontrado (Error 404)'</h1> }  /> */ } 
-                        <Route path='/form' element={<Form />} />
-                        <Route path='/cart' element={<Cart />} />                
+                        <Route path='/form' element={<Form />} />                 
                     </Routes>
+
                 </BrowserRouter>
-            </CartContextProvider>
+                </CartContextProvider>
+            {/* </Context.Provider> */}
         </div>
     );
 }

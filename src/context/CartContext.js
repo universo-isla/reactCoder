@@ -33,14 +33,14 @@ const addItem = (productToAdd) => {
     const getQuantity = () => {
         let count = 0
         cart.forEach(prod => {
-            count += prod.quantity
+            count += prod.getQuantity
         })
 
         return count
     }
-    
+
     const isInCart = (id) => {
-        return cart.some(p => p.id === id )
+       return cart.some( prod => prod.id === id)
     }
 
     const clearCart = () => {

@@ -1,10 +1,8 @@
-import React, { useContext } from 'react';
-// import { Context } from "../../App";
-// import ItemCount from '../ItemCount/index';
+import React from 'react';
+import ItemCount from '../ItemCount/index';
 import './ItemDetail.css'
-import { /* useState, */  } from 'react'
+import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
-import Counter from '../Counter/Counter';
 import CartContext from '../../context/CartContext';
 
  
@@ -28,15 +26,16 @@ import CartContext from '../../context/CartContext';
 
 } */
 
-const ItemDetail = ({id, name, img, category, descripcion, precio, stock, setCart, cart}) => {
+const ItemDetail = ({id, name, img, category, descripcion, precio, stock}) => {
 
 
-    //const [quantity, setQuantity ] = useState(0)
+    const [  setQuantity ] = useState(0) //quantity, va dentro de corchetes, prueba
 
     const { addItem, /* isInCart, */ getQuantityProd } = useContext(CartContext)
 
     const handleAdd = (count) => {
-        //setQuantity(count)
+        
+        setQuantity(count)
 
         const objProd = {
             id, name, precio, quantity: count,
