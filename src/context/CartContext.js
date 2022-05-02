@@ -15,7 +15,7 @@ const addItem = (productToAdd) => {
                 if(prod.id === productToAdd.id) {
                     const newProduct = {
                         ...prod,
-                        quantity: productToAdd.quantity
+                        quantity: prod.quantity + productToAdd.quantity
                     }
                     return newProduct
                 } else {
@@ -33,7 +33,7 @@ const addItem = (productToAdd) => {
     const getQuantity = () => {
         let count = 0
         cart.forEach(prod => {
-            count += prod.getQuantity
+            count += prod.quantity
         })
 
         return count
@@ -48,20 +48,24 @@ const addItem = (productToAdd) => {
     }
 
     const removeItem = (id) => {
-        const products = cart.filter(prod => prod.id !== id )
+        const products = cart.filter((prod) => prod.id !== id )
         setCart(products)
-    }
-
- const getQuantityProd = (id) => {
-        return cart.find(prod => prod.id === id)?.quantity
+    };    
+    const getQuantityProd = (id) => {
+        return cart.find(prod => prod.id === id).quantity || 0 
+        //aquí recibí ayuda ya que no corría la función, antes estaba: return cart.find((prod) => prod.id === id)?.quantity
     }
 
     const getTotal = () => {
-        let total = 0
+/*         let total = 0
         cart.forEach(prod => {
             total += prod.quantity * prod.price
         })
-        
+         */
+        const total = Object.values(cart).reduce(
+            (acc, { quantity, precio}) => acc + quantity * precio,
+            0
+          );
         return total
     }
 

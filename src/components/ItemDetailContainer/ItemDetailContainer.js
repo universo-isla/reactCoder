@@ -29,7 +29,6 @@ const ItemDetailContainer = (setCart, cart) => {
         })
     }, [productId])
 
-<<<<<<< HEAD
 /*     if(loading) {
         return(
             <h1>Cargando...</h1>
@@ -46,17 +45,6 @@ const ItemDetailContainer = (setCart, cart) => {
                  : 
                     <h1>El producto no existe</h1>
             }
-=======
-    return (
-        <div className='ItemDetailContainer'>
-         {
-                loading ?
-                <h1>Cargando...</h1>:
-                product ?
-                <ItemDetail  {...product} setCart={setCart} cart={cart } /> :
-                <h1>El producto no existe</h1>
-            } 
->>>>>>> parent of 9ece763... mejoras en contador, ya va a los detalles, aunque se desconectan las imgs, ya suma a la cant del carrito
         </div>
     )
 }
