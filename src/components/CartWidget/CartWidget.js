@@ -11,10 +11,10 @@ const CartWidget = () => {
 
     return (
         <div>
-            <div className="CartWidget">
-                <Link to="/carrito">
-                    <img src ='./multimedia/cart_vde.png' alt='cart' className='CartImg'/>
-                    <p className={`{getQuantity() === 0 ? "oculto" : "numero-carrito"}`}>
+            <div className={getQuantity() === 0 ? 'oculto' : 'tieneProds}'}>
+                <Link to="/cart">
+                    <img src ='/multimedia/cart_vde.png' alt='cart' className='CartImg'/>
+                    <p>
                         { getQuantity() } {""}
                     </p>
                 </Link>

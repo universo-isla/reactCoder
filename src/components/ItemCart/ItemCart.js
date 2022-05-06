@@ -8,10 +8,10 @@ const ItemCart = ({id, name, precio, quantity}) => {
   return (
     <div>
       <p>{name}</p>
-      <p>$ {precio}</p>
-      <p>SubTotal: $ {quantity * precio} </p>
       <p>Cantidad: {quantity}</p>
-      <button onClick={() => removeItem(id)}>X</button>
+      <p>Precio unitario: ${precio} </p>
+      <p>Subtotal: <span>${quantity * precio} </span> </p>
+      <button onClick={() => removeItem(id)}>Remover producto</button>
     </div>
   );
 }

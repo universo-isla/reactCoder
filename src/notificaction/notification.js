@@ -4,14 +4,13 @@ import React from 'react';
 
 const Notification = ({ message /* = 'Esto es un mensaje' */, severity /* = 'success' */, otherClass = 'Message' }) => {
 
-    const notificationStyles = {
+    const estiloNotificacion = {
       position: 'absolute',
       top: 100,
       right: 5,
       width: 'auto',
       height: 'auto',
       padding: '10px 20px 10px 20px',
-
     }
 
     if(message === '') {
@@ -20,7 +19,7 @@ const Notification = ({ message /* = 'Esto es un mensaje' */, severity /* = 'suc
   
     const config = true ? 
     {
-        style: notificationStyles,
+        style: estiloNotificacion,
         className: `${severity === 'success' ? 'Success' : 'Error'} ${otherClass || ''}`
     } : {}
 

@@ -52,10 +52,9 @@ const addItem = (productToAdd) => {
         setCart(products)
     };    
     const getQuantityProd = (id) => {
-        return cart.find(prod => prod.id === id).quantity || 0 
-        //aquí recibí ayuda ya que no corría la función, antes estaba: return cart.find((prod) => prod.id === id)?.quantity
+        return cart.find((prod) => prod.id === id)?.quantity
     }
-
+    
     const getTotal = () => {
 /*         let total = 0
         cart.forEach(prod => {

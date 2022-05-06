@@ -9,24 +9,36 @@ import { useNotification } from '../../notificaction/notification';
 //import NotificationContext from '../../notificaction/notification';
 
 
-const ItemDetail = ({id, name, img, category, descripcion, precio, stock}) => {
+const ItemDetail = ({
+    id, 
+    name, 
+    img, 
+    category, 
+    descripcion, 
+    precio, 
+    stock
+    }) => {
 
-    const { addItem,  /* isInCart, */  getQuantityProd } = useContext(CartContext)
-    const { setNotification } = useNotification()
+        const { addItem,  /* isInCart, */  getQuantityProd } = useContext(CartContext)
+        const { setNotification } = useNotification()
 
-    const handleAdd = (count) => {
-        
-        //setQuantity(count)
+        const handleAdd = (count) => {
+            
+            //setQuantity(count)
 
-        const objProd = {
-            id, name, precio, quantity: count,
-        }
+            const objProd = 
+            {
+                id, 
+                name, 
+                precio, 
+                quantity: count,
+            }
 
         /* setCart([...cart, objProd]) */
         //setQuantity(count)
 
-        addItem (objProd)
-        setNotification('success', `Se agregaron ${count} ${name} correctamente`)
+        addItem (objProd);
+        setNotification('success', `Se agregaron ${count} ${name} correctamente`);
 
     }
 
@@ -53,10 +65,15 @@ const ItemDetail = ({id, name, img, category, descripcion, precio, stock}) => {
             </section>
             <footer className='ItemFooter'> 
                 { 
-                false ?
+                false ? (
                 <Link to='/cart'>Ir al carrito</Link> 
-                : <Counter onAdd={handleAdd} stock={stock} initial={getQuantityProd(id)} /> 
-                } 
+                ) : (
+                    <Counter 
+                    onAdd={handleAdd} 
+                    stock={stock} 
+                    initial={getQuantityProd(id)} 
+                    />
+                )} 
             </footer>
         </article>
     )

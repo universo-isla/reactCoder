@@ -20,7 +20,7 @@ const NavBar = () => {
         <nav className="NavBar">
             <Navbar variant="light" sticky="top" expand="sm">
                 <Navbar.Brand >
-                    <img src={'./multimedia/logo_amantes_verdes.png'} alt="logo_NavBar" height={100} />
+                    <img src={'/multimedia/logo_amantes_verdes.png'} alt="logo_NavBar" height={100} />
                 </Navbar.Brand>
                 <Navbar.Toggle />
                 <Navbar.Collapse>

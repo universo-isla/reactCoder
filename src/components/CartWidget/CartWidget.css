@@ -1,4 +1,4 @@
-.CartWidget {
+.tieneProds {
 padding: 12px;
 font-size: 1rem;
 border-radius: 8px;
@@ -13,4 +13,8 @@ cursor: pointer;
 .CartImg{
     width: 30px;
     margin-right: 20px;
+}
+
+.oculto{
+    display: none;
 }

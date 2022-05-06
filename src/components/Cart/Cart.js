@@ -7,30 +7,32 @@ const Cart = () => {
 
     //const [loading, setLoading] = useState(false)
 
-    const { cart, totalCost, clearCart, getQuantity } = useContext(CartContext)
-    
-    //const ids = cart.map(prod => prod.id)
+    const { cart, removeItem, getTotal, clearCart, getQuantity } = useContext(CartContext)
 
-    if(getQuantity() === 0) {
-        return (
-            <div>
-                <h1>No hay productos</h1>
-                <Link to={"/productos"}>Inicio</Link>
-            </div>
+    if(cart.length === 0) {
+        return(
+            <>
+                <h1>No hay productos en el carrito</h1>
+                <Link to='/'>
+                    <button>Ir al listado</button>
+                </Link> 
+            </>
         )
-    } 
+    }
+
+
 
     return (
         <div>
-            <h1>Cart</h1>
-            {cart.map((prod) => (
-            <ItemCart key={prod.id} {...prod} />
-            ))}
-            <span>El total es: $ {totalCost}</span>
-            <button onClick={() => clearCart()} className="Button">Vaciar Carrito</button>
-            {/* <button onClick={() => createOrder()} className="Button">Terminar pedido</button> */}
-            {/* <button>Realizar compra</button> */}
+            <h1>Tu carrito</h1>
+            {cart.map(prod => <ItemCart key={prod.id}{...prod}/>)}
+                <p className="Total">Total: ${getTotal()}</p>
+                <div className="Btn">
+                    <Link className="vaciar" to={'/'} onClick={() => clearCart()}>Vaciar carrito</Link>
+                    <Link className="continuar" to={'/form'}>Continuar compra</Link>
+                </div>
         </ div>
+        
     )
 }
 
