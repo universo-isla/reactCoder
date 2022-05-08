@@ -34,11 +34,11 @@ const App = () => {
                             <Route path='/' element={<ItemListContenedor greeting=
                                 {<p>Catálogo de plantas</p>} />} 
                             />
-                            <Route path='/category/:categoryId' 
+                            <Route path="/category/:categoryId" 
                                 element={<ItemListContenedor />} 
                             />
                             <Route path='/detail/:productId' 
-                                element={<ItemDetailContainer /* **esto falta** setCart={setCart} cart={cart} */ />}  /> 
+                                element={< ItemDetailContainer />}  /> 
                             {/* <Route path='*' element={<h1>'No encontrado (Error 404)'</h1> }  /> */ } 
                             <Route path='/form' element={<Form />} />    
                             <Route path='/cart' element={<Cart />} />              

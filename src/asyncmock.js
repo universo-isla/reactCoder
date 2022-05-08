@@ -53,7 +53,7 @@ const products = [
   ];
   
   export const getCategories = () => {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       setTimeout(() => {
         resolve(categories);
       }, 500);
@@ -61,21 +61,19 @@ const products = [
   };
   
   export const getProducts = (categoryId) => {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       setTimeout(() => {
-        resolve(
-          categoryId
-            ? products.filter((prod) => prod.category === categoryId)
-            : products
-        );
+        resolve(categoryId ? products.filter(prod => 
+          prod.category === categoryId)
+            : products)
       }, 500);
     });
   };
   
   export const getProductsById = (id) => {
-    return new Promise((resolve) => {
+    return new Promise(resolve => {
       setTimeout(() => {
-        resolve(products.find((prod) => prod.id === id));
+        resolve(products.find(prod => prod.id === id))
       }, 500);
     });
   };
