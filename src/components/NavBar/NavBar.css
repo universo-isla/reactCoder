@@ -1,9 +1,33 @@
-.NavBar {
-    background-color: rgb(171, 216, 157);
-    font-size: 1rem;
-    color: rgb(69, 102, 84);
-    font-family: 'Noto Sans', sans-serif;
-    padding-left: 2rem;
-    padding-right: 2rem;
 
+
+.NavBar {
+    width: 100%;
+    background-color: rgb(171, 216, 157);
+    
+    padding: 2rem;
+}
+
+.Categories {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    padding: 0.5rem 2.5rem;
+    color: rgb(69, 102, 84);
+    font-size:14px;
+    font-weight: 100;
+    cursor: pointer;
+    transition: 0.5s all ease;
+    line-height: 22px;
+}
+
+.navItem {
+    color: rgb(55, 92, 72);
+    font-family: 'Noto Sans', sans-serif;
+    padding-top: 0.5rem;
+}
+
+.navItem:hover {
+    color: #900C3F;
+    font-weight: bold;
 }
