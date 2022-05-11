@@ -11,7 +11,7 @@ import '../ItemDetailContainer/ItemDetailContainer.css'
 
 const ItemDetailContainer = (setCart, cart) => {
     const [product, setProduct] = useState([])
-    const [loading, setLoading] = useState(false)
+    const [loading, /*setLoading*/] = useState(false)
 
     const { productId } = useParams()
 

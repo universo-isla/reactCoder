@@ -66,7 +66,7 @@ const NavBar = () => {
                         <div className="Categories" >
                             { categories.map(cat => <NavLink key={cat.id} to={`/category/${cat.id}`}
                             className={({isActive}) => isActive ? 'ActiveOption' : 'Option'}
-                            >{cat.description}</NavLink>)}
+                            >{cat.id}</NavLink>)}
                         </div>
                     </Navbar.Collapse>
                 <CartWidget />
