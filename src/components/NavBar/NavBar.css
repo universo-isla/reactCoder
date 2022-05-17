@@ -1,33 +1,57 @@
 
-
 .NavBar {
     width: 100%;
+    display: flex ;
     background-color: rgb(171, 216, 157);
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    color: rgb(69, 102, 84);
+    justify-content: space-around;
     
-    padding: 2rem;
 }
+
 
 .Categories {
+    padding: 10px;
     display: flex;
-    justify-content: space-around;
     align-items: center;
-    height: 100%;
-    padding: 0.5rem 2.5rem;
+    justify-content: space-around;
     color: rgb(69, 102, 84);
-    font-size:14px;
-    font-weight: 100;
-    cursor: pointer;
-    transition: 0.5s all ease;
-    line-height: 22px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.3rem;
 }
 
-.navItem {
-    color: rgb(55, 92, 72);
-    font-family: 'Noto Sans', sans-serif;
-    padding-top: 0.5rem;
+a{
+    color: rgb(69, 102, 84);
+    font-family: 'Ubuntu', sans-serif;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+a.Option {
+
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: rgb(69, 102, 84);
+
 }
 
-.navItem:hover {
-    color: #900C3F;
-    font-weight: bold;
+a.Option:hover {
+    color: rgb(40, 56, 47);
+}
+
+a.ActiveOption {
+    color: rgb(40, 56, 47);
+    text-decoration: underline;
+}
+
+a.ActiveOption:hover {
+    color: rgb(40, 56, 47);
+    text-decoration: underline;
+}
+
+.CartWinNavBar {
+    
 }

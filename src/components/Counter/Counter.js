@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from "react";
+import './ItemCount.css'
 
 
 const Counter = ({initial, stock, onAdd}) => {
@@ -10,15 +11,23 @@ const Counter = ({initial, stock, onAdd}) => {
     }
 
     const increment = () => {
-        setCount(count + 1)
+        if (count < stock){
+            setCount(count + 1)
+        }
     }
 
+
     return(
-        <div>
-            <button onClick={decrement}>-</button>
-            <p>{count}</p>
-            <button onClick={increment}>+</button>
-            <button onClick={() => onAdd(count)}Agregar al carrito></button>
+        <div className='Counter'>
+            <div className='Contador'>
+                <button className='buttonAgregar' onClick={decrement}>-</button>
+                <p className='CounterCant'>{count}</p>
+                <button className='buttonAgregar' onClick={increment}>+</button>
+            </div>
+            <div className='Agregar'>
+                <button className='buttonAgregar' onClick={() => onAdd(count)}>
+                    <img src ='/multimedia/cart_vde.png' alt='cart' className='CartImgCounter'/>Agregar</button>
+            </div>
         </div>
     )
 

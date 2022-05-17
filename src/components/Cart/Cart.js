@@ -1,35 +1,40 @@
-import { React, useContext, /* useState */ } from "react"
+import { React, useContext, useState } from "react"
 import CartContext from '../../context/CartContext'
 import ItemCart from '../ItemCart/ItemCart'
 import { Link } from 'react-router-dom'
+import './Cart.css'
 
 const Cart = () => {
 
-    //const [loading, setLoading] = useState(false)
 
-    const { cart, removeItem, getTotal, clearCart, getQuantity } = useContext(CartContext)
+    const { cart, getTotal, clearCart, getQuantity } = useContext(CartContext)
 
-    if(cart.length === 0) {
+    if(getQuantity() === 0) {
         return(
             <>
                 <h1>No hay productos en el carrito</h1>
                 <Link to='/'>
-                    <button>Ir al listado</button>
+                    <button className="buttonAgregar">Ir al listado</button>
                 </Link> 
             </>
         )
     }
 
-
-
     return (
-        <div>
+        <div className="ContenedorCart">
             <h1>Tu carrito</h1>
-            {cart.map(prod => <ItemCart key={prod.id}{...prod}/>)}
+            <div className="ContenedorCartProds">
+                {cart.map(prod => <ItemCart key={prod.id}{...prod}/>)}
+            </div>
+            
                 <p className="Total">Total: ${getTotal()}</p>
-                <div className="Btn">
-                    <Link className="vaciar" to={'/'} onClick={() => clearCart()}>Vaciar carrito</Link>
-                    <Link className="continuar" to={'/form'}>Continuar compra</Link>
+                <div>
+                    <Link to={'/'} onClick={() => clearCart()}>
+                        <button className= "ProductsInCartButton">Vaciar carrito</button>
+                    </Link>
+                    <Link  to={'/form'}>
+                        <button className= "ProductsInCartButton">Orden de compra</button>
+                    </Link>
                 </div>
         </ div>
         

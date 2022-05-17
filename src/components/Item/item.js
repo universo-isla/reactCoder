@@ -2,22 +2,12 @@ import React from 'react';
 import './Item.css';
 import { Link } from 'react-router-dom'
 
-//import { Context } from '../../App';
-
-//import Context from 'react-bootstrap/esm/AccordionContext';
 
 
 const Item = ({id, name, img, precio}) => {
 
-/*     const handleClick = (e) => {
-        e.stopPropagation()
-        console.log('Hice click en Item')
-    } */
-
-   
-
     return(
-        <article className='CardItem' /* onClick={handleClick} */>
+        <article className='CardItem'>
            <div className={id}>
                 <header className='Header'>
                     <h2 className='ItemHeader'>
@@ -32,11 +22,11 @@ const Item = ({id, name, img, precio}) => {
                         Precio: ${precio}
                     </p>
                 </section>
-                <footer className='ItemFooter'>
+                <section className='ItemFooter'>
                     <Link to={`/detail/${id}`} className='Option'>
-                        <button>Ver detalle</button>
+                        <button className='button'>Detalle</button>
                     </Link>
-                </footer>
+                </section>
            </div>
 
         </article>

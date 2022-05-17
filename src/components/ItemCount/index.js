@@ -24,11 +24,12 @@ function ItemCount({ stock = 0, initial = 1, onAdd }) {
 
     return (
       <div>
-        <button onClick={disminuir}>-</button>
+        <button className='button' onClick={disminuir}>-</button>
         <span>{quantity}</span>
-        <button onClick={incrementar}>+</button>
-        <button onClick={() => onAdd(quantity)}> Agregar al carrito </button>
+        <button className='button' onClick={incrementar}>+</button>
+        <button className='button' onClick={() => onAdd(quantity)}> Agregar al carrito </button>
       </div>
+      
     );
   }
-  export default ItemCount;
+  //export default ItemCount;

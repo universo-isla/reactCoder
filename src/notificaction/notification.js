@@ -1,4 +1,4 @@
-//import './Notification.css'
+import './notification.css'
 import { useState, createContext, useContext } from 'react'
 import React from 'react';
 
@@ -6,7 +6,7 @@ const Notification = ({ message /* = 'Esto es un mensaje' */, severity /* = 'suc
 
     const estiloNotificacion = {
       position: 'absolute',
-      top: 100,
+      top: 150,
       right: 5,
       width: 'auto',
       height: 'auto',
@@ -20,7 +20,7 @@ const Notification = ({ message /* = 'Esto es un mensaje' */, severity /* = 'suc
     const config = true ? 
     {
         style: estiloNotificacion,
-        className: `${severity === 'success' ? 'Success' : 'Error'} ${otherClass || ''}`
+        className: `${severity === 'success' ? 'Success' : 'Error'}`
     } : {}
 
     return (

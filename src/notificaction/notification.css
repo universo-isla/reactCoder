@@ -1,0 +1,13 @@
+.Success {
+    background-color: rgb(151, 205, 175);
+    border-radius: 3px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+}
+
+.Error {
+    background-color: rgb(163, 72, 72);
+    border-radius: 3px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+}

@@ -10,13 +10,16 @@ const CartWidget = () => {
     const { getQuantity } = useContext(CartContext)
 
     return (
-        <div>
+        <div className='CartWidget'>
             <div className={getQuantity() === 0 ? 'oculto' : 'tieneProds}'}>
+           
                 <Link to="/cart">
-                    <img src ='/multimedia/cart_vde.png' alt='cart' className='CartImg'/>
-                    <p>
-                        { getQuantity() } {""}
-                    </p>
+                    <button className='buttonWidget'>
+                        <p className='ProdsCartWidget'>No. de productos: { getQuantity() } {""}</p>
+                        <img src ='/multimedia/cart_vde.png' alt='cart' className='CartImg'/>
+                        Ir al carrito
+                    </button>
+
                 </Link>
                 
             </div>
