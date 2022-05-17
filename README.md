@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Amantes Verdes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto final para el curso de React JS, Coder House 2022.
 
-## Available Scripts
+### Lenguajes y BIBLIOTECAS
 
-In the project directory, you can run:
+HTML
+CSS
+JavaScript
+Librería React
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Dependencias
 
-### `npm test`
+React-router-dom - Navegación
+React-Firebase - Base de datos [products (importar), orders(exportar)]
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Funcionamiento
+Esto es un mapa a grandes rasgos de las rutas y componentes para conocer el funcionamiento de la app.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- index.html (se llama la app en div id="root")
+-> app.js 
+- -> Routing de COMPONENTES
+- - - NavBar
+- - - ItemListContenedor
+- - - Footer
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> NavBar: Logo(Link a ItemListContenedor)
+        Obtención de "categories" de colección en Firebase
+        Elemento CartWidget en espera 
+> ItemListContenedor (despliegue de los productos) alimentado por (Item list: a su vez alimentado por Item), dirige a /detail.
 
-### `npm run eject`
+> ItemDetailContainer (detalle del producto): Descripción del producto (ItemDetail) y Counter
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+> Counter: suma de productos a CartWidget y productos en Cart, se detiene cuando detecta que no hay más elementos en stock (firebase)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+>CartWidget: en NavBar, display none hasta que haya elementos, link a Cart
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+> Cart: opción de borrar productos y regresar a ItemDetailContainer, o generar orden a través de Forms
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+> Forms: Obtención de datos de usuario, conexión a "orders" en firebase, obtención de ID de orden y re-dirección a pantalla "Tu orden de compra es: "
+      
 
-## Learn More
+### Visualización navegación
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![gif-AnabellEstrada_AmantesVerdes](https://user-images.githubusercontent.com/39147095/168727796-64fe78be-c3cc-4b23-ad4c-e76f6d5ccd6d.gif)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Retos y espacios de oportunidad
+Esta app fue construida a pesar de mis conocimientos básicos de JavaScript, hay problemas con los errores de stock, de ahí aclaración en counter. Los estilos son muy básicos, me concentré en el funcionamiento de la app.
